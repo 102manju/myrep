@@ -1,0 +1,19 @@
+---
+
+- hosts: tomcat-server
+
+
+- hosts : test
+      - edge1
+      - subnet1:  
+         - Address: 10.0.1.0/24
+           mask: 255.0.0.0
+           broadcast: 10.0.1.255
+           gateway: 10.0.1.1
+
+- hosts:
+      - subnet1:  
+         - Address: 10.0.2.0/24
+         - mask: 255.0.0.0
+         - broadcast: 10.0.1.255
+         - gateway: 10.0.1.1
